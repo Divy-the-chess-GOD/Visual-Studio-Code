@@ -1,0 +1,11 @@
+<html>
+<head>
+ <TITLE>atention</TITLE>
+</head>
+<body>
+  <h1 id="DOM"></h1>
+  <script>
+  var Dom = document.getElementById("DOM").innerHTML = a*a;
+    </script>
+</body>
+</html>
