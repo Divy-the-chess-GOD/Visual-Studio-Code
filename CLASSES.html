@@ -1,4 +1,4 @@
-<html></html>
+<html>
 <head>
 <title>Class</title>
 </head>
@@ -11,17 +11,17 @@
     class student{
       constructor(name,year){
       this.name = name;
-      this.year = year
+      this.year = year;
     }
       age(){
-        let Date = new Date();
-        return Date.getFullYear() - this.year;
+        let date = new Date();
+        return date.getFullYear() - this.year;
       }
     }
-    student = new student("Divy",2014)
+    student1 = new student("Divy",2014)
     document.getElementById("student1").innerHTML = "My name is " + student1.name + ". I was born in " + student1.year + ". And my age is " + student1.age();
 
-    student = new student("Riya",2014)
+    student2 = new student("Riya",2014)
     document.getElementById("student2").innerHTML = "My name is " + student2.name + ". I was born in " + student2.year + ". And my age is " + student2.age();
   </script>
 </body>
