@@ -6,12 +6,21 @@
     body {
       background : linear-gradient(to bottom, yellow, pink) ;
     }
+
+    h1 {
+        text-align: center;
+        color: aqua;
+    }
+
+    h3 {
+        text-align: center;
+        color: blanchedalmond;
+    }
   </style>
 </head>
 <body>
 <h1>INTRODUCTION</h1>
-  <P id = "student1"></P>
-  <P id = "student2"></P>
+  <h3 id = "student1"></h3>
   <script>
     class student{
       constructor(name,year){
@@ -27,7 +36,7 @@
     student1.DateofBirth = prompt("Enter your Date of Birth");
     student1.age = prompt("Enter your age");
     
-document.getElementById("student1").innerHTML = "My name is " + student1.name + " and my age is " + student1.age + " and my date of birth is " + student1.DateofBirth + ".";
+document.getElementById("student1").innerHTML = "My name is " + student1.name + ", my age is " + student1.age + " and my date of birth is " + student1.DateofBirth + ".";
   </script>
 </body>
 </html>
