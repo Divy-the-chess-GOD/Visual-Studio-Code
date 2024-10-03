@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>CS JS</title>
+  </head>
+  <body>
+    <h2>JS</h2>
+    <p>Use the "extemds" keyword to inherit all methods.</p>
+    <P>Use the "super" methods to call the parent's constructor function.</P>
+
+<p id = "details"></p>
+<script>
+class Car {
+constructor(brand) {
+  this.carname = brand;
+}
+present() {
+  return 'I have a ' + this.carname;
+}
+ }
+  class Model extends Car {
+    constructor(brand, mod) {
+      super(brand);
+      this.model = mod;
+  }
+    show() {
+      return this.present() + ', it is a ' + this.model = mod;
+    }
+  }
+  let myCar = new Model("Ford", "Chevorlet")
+  document.getElementById("details").innerHTML = myCar.show();
+</script>  
+  </body>
+</html>
