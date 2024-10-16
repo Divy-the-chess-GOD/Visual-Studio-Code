@@ -1,16 +1,21 @@
 <html>
 <head>
 <title>BFF</title>
+  <style>
+    .body {
+ background-color: green;
+    }
+  </style>
 </head>
-<body>
+<body class="body">
 <h1>The Calculator</h1>
 <div>
-  <button onclick="document.write(a + ' + ' + b + ' = ' + (parseInt(a) + parseInt(b)));">Add</button> <br>
-  <button onclick="document.write(a + ' - ' + b + ' = ' + (parseInt(a) - parseInt(b)));">Subtract</button>
+  <button class="body" onclick="document.write(a + ' + ' + b + ' = ' + (parseInt(a) + parseInt(b)));">Add</button> <br>
+  <button class="body" onclick="document.write(a + ' - ' + b + ' = ' + (parseInt(a) - parseInt(b)));">Subtract</button>
   <br>
-   <button onclick="document.write(a + ' * ' + b + ' = ' + (parseInt(a) * parseInt(b)));">Multiply</button>
+   <button class="body" onclick="document.write(a + ' * ' + b + ' = ' + (parseInt(a) * parseInt(b)));">Multiply</button>
   <br>
-   <button onclick="document.write(a + ' / ' + b + ' = ' + (parseInt(a) / parseInt(b)));">Divide</button>
+   <button class="body" onclick="document.write(a + ' / ' + b + ' = ' + (parseInt(a) / parseInt(b)));">Divide</button>
 </div>
 <script>
 var a = prompt("Enter a number");
