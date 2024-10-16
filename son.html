@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Json Asychronus dawg</title>
+</head>
+<body>
+  <h2>Sinc it dude</h2>
+  <p>Enter two numbers:</p>
+  <input type="number" id="num1" placeholder="First number">
+  <input type="number" id="num2" placeholder="Second number">
+  <button id="multiplyBtn">Multiply</button>
+  <p id="jesh"></p>
+
+  <script>
+    const num1Input = document.getElementById("num1");
+    const num2Input = document.getElementById("num2");
+    const multiplyBtn = document.getElementById("multiplyBtn");
+    const resultElement = document.getElementById("jesh");
+
+    multiplyBtn.addEventListener("click", async () => {
+      // Get the input values
+      const num1 = parseInt(num1Input.value);
+      const num2 = parseInt(num2Input.value);
+
+      // Validate input
+      if (isNaN(num1) || isNaN(num2)) {
+        resultElement.textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      // Perform the multiplication
+      const product = await multiply(num1, num2);
+
+      // Display the result
+      resultElement.textContent = `The product is: ${product}`;
+    });
+
+    async function multiply(a, b) {
+      // Placeholder: You could fetch data from an API here, 
+      // but the example focuses on the basic multiplication.
+      const product = a * b;
+      return product; 
+    }
+  </script>
+</body>
+</html>
