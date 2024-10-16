@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Promise Fortune Teller</title>
+</head>
+<body>
+  <h1>Fortune Teller</h1>
+  <button id="getFortuneBtn">Tell Me My Fortune!</button>
+  <p id="fortune"></p>
+
+  <script>
+    const fortuneBtn = document.getElementById('getFortuneBtn');
+    const fortuneElement = document.getElementById('fortune');
+
+    // Array of fortunes
+    const fortunes = [
+      "You will find a shiny penny today.",
+      "A new adventure awaits you.",
+      "Be kind to yourself.",
+      "Good things are coming your way.",
+      "Luck is on your side.",
+      "You will meet someone special soon.",
+      "Your dreams will come true.",
+      "You will achieve your goals.",
+      "Follow the path and you will find success.",
+      "You will have a pleasant surprise.",
+      // Add more fortunes here!
+    ];
+
+    // Function to fetch a random fortune (simulates an asynchronous action)
+    function getFortune() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const randomIndex = Math.floor(Math.random() * fortunes.length);
+          resolve(fortunes[randomIndex]);
+        }, 1000); // Simulate a delay (like network request)
+      });
+    }
+
+    fortuneBtn.addEventListener('click', () => {
+      getFortune()
+        .then(fortune => {
+          fortuneElement.textContent = fortune;
+        })
+        .catch(error => {
+          console.error("Error fetching fortune:", error);
+          fortuneElement.textContent = "Oops! Something went wrong. Try again later.";
+        });
+    });
+  </script>
+</body>
+</html>
