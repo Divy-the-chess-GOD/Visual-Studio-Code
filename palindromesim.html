@@ -1,0 +1,23 @@
+<html>
+  <head><title>Palindrome</title></head>
+  <body>
+<h1>Palindrome</h1>
+    <script>
+function palindrome(myString) {
+    var input = myString.replace(/[^A-Z0-9]/ig, "");
+  var reversedinput = input.split('').reverse().join('');
+
+
+  if (input === reversedinput) {
+document.write("<div>" + myString + " is a palindrome <div>");
+  }
+
+  else {
+    document.write("<div>" + myString + " is not a palindrome <div>");
+  }
+}
+      var enter = prompt("Enter a word");
+      palindrome(enter );
+      </script>
+  </body>
+</html>
