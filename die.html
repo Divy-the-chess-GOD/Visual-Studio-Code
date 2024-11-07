@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Rolling Dice</title>
+<style>
+body {
+  background-color: #f0f0f0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.dice {
+  display: inline-block;
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #ddd;
+  font-size: 4em;
+  line-height: 100px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <img class="dice" id="dice1" src="1.png" alt="Dice 1">
+  <button id="rollButton">Roll Dice</button>
+</div>
+
+<script>
+  const dice1 = document.getElementById('dice1');
+  const rollButton = document.getElementById('rollButton');
+
+  const diceImages = [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png",
+    "6.png"
+  ];
+
+  rollButton.addEventListener('click', () => {
+    const randomNum = Math.floor(Math.random() * 6);
+    dice1.src = diceImages[randomNum];
+  });
+</script>
+</body>
+</html>
