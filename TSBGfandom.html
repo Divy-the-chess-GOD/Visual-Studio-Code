@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Example</title>
+    <style>
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav-link" id="home-link">Home</a></li>
+            <li><a href="#about" class="nav-link" id="about-link">About Us</a></li>
+            <li><a href="#working" class="nav-link" id="working-link">Main</a></li>
+            <li><a href="#visit" class="nav-link" id="visit-link">Fandom</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="content">
+            <h2>Home</h2>
+            <p>Welcome to the TSB Fandom!</p>
+        </section>
+
+        <section id="about" class="content">
+            <h2>About Us</h2>
+            <p>We are a group of passionate individuals dedicated to The Strongest Battlegrounds.</p>
+        </section>
+
+        <section id="working" class="content">
+            <h2>What We're Working For</h2>
+            <p>Our mission is to give gamers their best experience.</p>
+        </section>
+
+        <section id="visit" class="content">
+            <h2>The game.</h2>
+            <p>Click on the links below to learn more about the game!</p>
+            <ol>
+              <li><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/The_Strongest_Hero">Saitama (The strongest hero)</a></li>
+              <li><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Hero_Hunter">Garou (Hero Hunter)</a></li>
+              <li><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Destructive_Cyborg">Genos (Destructive Cyborg)</a></li>
+              <li><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Deadly_Ninja">Sonic (Deadly Ninja)</a></li>
+              <li><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Brutal_Demon">Metal Bat (Brutal Demon)</a></li>
+              <li><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Blade_Master">Atomic Samurai (Blade Master)</a></li>
+              <li><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Wild_Psychic">Tatsumaki (Wild Psychic)</a></li>
+              <li><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Martial_Artist">Suiryu (Martial Artist)</a></li>
+            </ol>
+
+
+        </section>
+    </main>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const contentSections = document.querySelectorAll('.content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); 
+
+                const targetId = link.getAttribute('href'); 
+                const targetSection = document.querySelector(targetId);
+
+                contentSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                targetSection.style.display = 'block';
+            });
+        });
+
+        const homeSection = document.getElementById('home');
+        homeSection.style.display = 'block';
+    </script>
+</body>
+</html>
