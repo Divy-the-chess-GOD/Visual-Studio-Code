@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider Website</title>
+    <style>
+        .left {
+           align-self: flex-start; 
+        }
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .slider-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .slide h2 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .slide p {
+            margin: 10px 0;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .slider-control {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            border: none;
+        }
+
+        .slider-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Image Slider</h1>
+    </header>
+
+    <div class="slider-container">
+        <div class="slider-track">
+     <section class="left , slide">
+               <img src="https://enthu.com/blog/wp-content/uploads/2022/07/Kings-Knight-Opening.png" width="300px">
+                <p style="color: red;">King's Knight opening</p>
+         </section>
+            <div class="slide">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2wTm3Y_XBCEL_-UJ26dOa3a475DUlt2bdDQ&s" width="300px">
+                <p style="color: red;">Italian Game.</p>
+            </div>
+            <div class="slide">
+               <img src="https://ppqty.com/wp-content/uploads/2023/07/Screen-Shot-2023-07-30-at-5.23.07-AM.png" width="300px">
+                <p style="color: red;">Four Knight's Game</p>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-control prev">Previous</button>
+            <button class="slider-control next">Next</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Image Slider Website</p>
+    </footer>
+
+    <script>
+        const sliderTrack = document.querySelector('.slider-track');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        let currentSlide = 0;
+        const slideWidth = slides[0].offsetWidth;
+
+        function goToSlide(index) {
+            sliderTrack.style.transform = `translateX(-${index * slideWidth}px)`;
+            currentSlide = index;
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                goToSlide(currentSlide - 1);
+            } else {
+                goToSlide(slides.length - 1);
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                goToSlide(currentSlide + 1);
+            } else {
+                goToSlide(0);
+            }
+        });
+    </script>
+</body>
+</html>
