@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Example</title>
+    <style>
+      body{
+        background-color:#00cccc;
+        color: red;
+      }
+        nav {
+            background-color:#00ffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav-link" id="home-link">Home</a></li>
+            <li><a href="#about" class="nav-link" id="about-link">About Us</a></li>
+            <li><a href="#working" class="nav-link" id="working-link">Main</a></li>
+            <li><a href="#visit" class="nav-link" id="visit-link">Fandom</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="content">
+            <h2>Home</h2>
+            <p>Welcome to the TSB Fandom!</p>
+        </section>
+
+        <section id="about" class="content">
+            <h2>About Us</h2>
+            <p>We are a group of passionate individuals dedicated to The Strongest Battlegrounds.</p>
+        </section>
+
+        <section id="working" class="content">
+            <h2>What We're Working For</h2>
+            <p>Our mission is to give gamers their best experience.</p>
+        </section>
+
+        <section id="visit" class="content">
+            <h2>The game.</h2>
+            <p>Click on the links below to learn more about the game!</p>
+            <ol>
+              <li> <img src="https://static.wikia.nocookie.net/the-strongest-battlegrounds-rblx/images/c/cf/The_Strongest_Hero_icon_new.webp/revision/latest/scale-to-width/360?cb=20240303175206"> <a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/The_Strongest_Hero" width="50px">Saitama (The strongest hero)</a> </li>
+              <li> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZUm8Jz0kYgj2r1XmusoqYa_e9WDG18yl6Tw&s"><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Hero_Hunter"width="50px">Garou (Hero Hunter)</a></li>
+              <li> <img src="https://static.wikia.nocookie.net/the-strongest-battlegrounds-rblx/images/a/a3/Destructive_Cyborg_icon_new.webp/revision/latest/scale-to-width/360?cb=20240303175258"width="50px"><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Destructive_Cyborg">Genos (Destructive Cyborg)</a></li>
+              <li> <img src="https://static.wikia.nocookie.net/the-strongest-battlegrounds-rblx/images/a/ad/Deadly_Ninja_icon_new.webp/revision/latest/scale-to-width/360?cb=20240303175322"width="50px"><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Deadly_Ninja">Sonic (Deadly Ninja)</a></li>
+              <li> <img src="https://static.wikia.nocookie.net/the-strongest-battlegrounds-rblx/images/f/fd/Brutal_Demon_icon_new.webp/revision/latest/scale-to-width/360?cb=20240303175340"width="50px"><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Brutal_Demon">Metal Bat (Brutal Demon)</a></li>
+              <li> <img src="https://static.wikia.nocookie.net/the-strongest-battlegrounds-rblx/images/8/80/Blade_Master_icon_new.webp/revision/latest/scale-to-width/360?cb=20240303175355"width="50px"><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Blade_Master">Atomic Samurai (Blade Master)</a></li>
+              <li> <img src="https://static.wikia.nocookie.net/the-strongest-battlegrounds-rblx/images/8/81/Wild_Psychic_icon_new.webp/revision/latest/scale-to-width/360?cb=20240303175409"width="50px"><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Wild_Psychic">Tatsumaki (Wild Psychic)</a></li>
+              <li> <img src="https://static.wikia.nocookie.net/the-strongest-battlegrounds-rblx/images/7/74/Martial_Artist_icon.png/revision/latest/scale-to-width/360?cb=20241107235015"width="50px"><a href="https://the-strongest-battlegrounds-rblx.fandom.com/wiki/Martial_Artist">Suiryu (Martial Artist)</a></li>
+            </ol>
+
+
+        </section>
+    </main>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const contentSections = document.querySelectorAll('.content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); 
+
+                const targetId = link.getAttribute('href'); 
+                const targetSection = document.querySelector(targetId);
+
+                contentSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                targetSection.style.display = 'block';
+            });
+        });
+
+        const homeSection = document.getElementById('home');
+        homeSection.style.display = 'block';
+    </script>
+</body>
+</html>
